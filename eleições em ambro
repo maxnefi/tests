@@ -7,7 +7,7 @@ int main()
 {
     int x,aux;
     int votoali=0,votoalc=0,votonul=0,votobr=0;
-    float porcali,porcalc;
+    float porcali,porcalc,soma;
     aux=0;
     for(;aux!=-1;)
     {
@@ -43,10 +43,11 @@ int main()
     {
         printf("93\n");
     }
-    porcali=(100*votoali)/4;
-    porcalc=(100*votoalc)/4;
-    printf("%d", porcali);
-    printf("%d", porcalc);
+    soma=(votoali+votoalc+votobr+votonul);
+    porcali=(100*votoali)/(soma-votonul);
+    porcalc=(100*votoalc)/(soma-votonul);
+    printf("%.2f\n", porcali);
+    printf("%.2f\n", porcalc);
     
 	return 0;
 }
